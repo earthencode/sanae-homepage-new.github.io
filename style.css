@@ -72,4 +72,5 @@ input[type="text"] {
   margin-top: 100px; /* Adjusted to pull the image slightly up from 100px */
   margin-right: 0px;
   margin-left: 200px;
+  animation: fadeIn 1s ease-out;
 }
