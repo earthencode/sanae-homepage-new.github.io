@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>bloom</title>
+    <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="x-icon" href="favicon.png">
+</head>
+
+<body>
+    <div class="container">
+        <p class="greeting">こんにちは!</p>
+
+        <p>
+            social;
+            <a href="https://www.youtube.com/">youtube</a> /
+            <a href="https://www.discord.com/app/">discord</a> /
+            <a href="https://reddit.com">reddit</a>
+        </p>
+
+        <p>
+            music;
+            <a href="https://www.soundcloud.com/">soundcloud</a> /
+            <a href="https://music.youtube.com">youtube</a> /
+            <a href="https://sanae.bandcamp.com">bandcamp</a>
+        </p>
+
+        <p>
+            database;
+            <a href="https://rutracker.org/forum/index.php">tracker</a> /
+            <a href="https://ext.to/">ext</a> /
+            <a href="https://eztvx.to/home">eztv</a> /
+            <a href="https://cs.rin.ru/forum/">rin</a>
+        </p>
+
+        <p>
+            misc;
+            <a href="https://www.photopea.com/">photopea</a> /
+            <a href="https://www.idokep.hu/elorejelzes/Koml%C3%B3">weather</a>
+        </p>
+
+        <input type="text" id="search-text" placeholder="search" value="">
+    </div>
+
+    <div class="gif">
+        <img src="2.jpg" />
+    </div>
+
+    <script>
+        // Search bar functionality
+        const searchInput = document.getElementById('search-text');
+        let searchQuery = '';
+
+        // Function to validate if a string is a URL
+        function isValidUrl(string) {
+            const urlRegex = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/[a-zA-Z0-9]+\.[^\s]{2,}|[a-zA-Z0-9]+\.[^\s]{2,})$/i;
+            return urlRegex.test(string);
+        }
+
+        searchInput.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                if (isValidUrl(this.value)) {
+                    let urlToOpen = this.value;
+                    if (!urlToOpen.startsWith('http://') && !urlToOpen.startsWith('https://')) {
+                        urlToOpen = `http://${urlToOpen}`;
+                    }
+                    document.location.href = urlToOpen
+                } else {
+                    document.location.href = `https://www.google.com/search?q=${encodeURIComponent(this.value)}`;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
