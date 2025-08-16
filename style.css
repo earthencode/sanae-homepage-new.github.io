@@ -1,7 +1,7 @@
 /* Base styles 1b1b1b efc37d*/
 body {
   background-color: #121212;
-  color: #efc37d;
+  color: #5e5a6e;
   font-family: 'Courier New', monospace;
   font-size: 14px;
   margin: 0;
@@ -24,14 +24,14 @@ body {
 /* Image to the right, fixed relative to center */
 .gif {
   position: absolute;
-  left: 50%;
-  transform: translateX(300px); /* adjust based on image size */
+  left: 45%; /* 50*/
+  transform: translateX(300px); /* 300 adjust based on image size */
   z-index: 0;
 }
 
 .gif img {
-  height: 400px;
-  border: 2px solid #efc37d; /* 👈 your custom color */
+  height: 170px; /* 400*/
+ /* border: 2px solid #efc37d; /* 👈 your custom color */
 }
 
 @keyframes fadeIn {
